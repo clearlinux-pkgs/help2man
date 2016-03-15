@@ -4,7 +4,7 @@
 #
 Name     : help2man
 Version  : 1.47.3
-Release  : 1
+Release  : 2
 URL      : http://ftp.gnu.org/gnu/help2man/help2man-1.47.3.tar.xz
 Source0  : http://ftp.gnu.org/gnu/help2man/help2man-1.47.3.tar.xz
 Summary  : No detailed summary available
