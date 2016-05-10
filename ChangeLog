@@ -1,3 +1,17 @@
+help2man (1.47.4) unstable; urgency=medium
+
+  * Update Serbian translation (thanks to Мирослав Николић).
+  * Add Chinese (simplified) translation of info page (thanks to Mingye Wang).
+  * Update Brazilian Portuguese translation (thanks to Rafael Fontenelle).
+  * Reduce the minimum translation to 60% for info files.
+  * Extract version from dpkg-parsechangelog using the new flag, rather
+    than sed.
+  * Add hardening flags via DEB_BUILD_MAINT_OPTIONS.
+  * Use secure VCS URIs.
+  * Update standards version to 3.9.8.
+
+ -- Brendan O'Dea <bod@debian.org>  Mon, 09 May 2016 17:20:39 +1000
+
 help2man (1.47.3) unstable; urgency=medium
 
   * Filter more untranslatable strings from help2man-texi.pot, and add a
