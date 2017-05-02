@@ -4,7 +4,7 @@
 #
 Name     : help2man
 Version  : 1.47.4
-Release  : 5
+Release  : 6
 URL      : http://ftp.gnu.org/gnu/help2man/help2man-1.47.4.tar.xz
 Source0  : http://ftp.gnu.org/gnu/help2man/help2man-1.47.4.tar.xz
 Summary  : No detailed summary available
