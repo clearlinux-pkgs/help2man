@@ -6,7 +6,7 @@
 #
 Name     : help2man
 Version  : 1.47.5
-Release  : 7
+Release  : 8
 URL      : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz
 Source0  : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz
 Source99 : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz.sig
