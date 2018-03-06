@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.5
-Release  : 9
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz
-Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz.sig
+Version  : 1.47.6
+Release  : 10
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
+Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -37,19 +37,19 @@ doc components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.47.5
+%setup -q -n help2man-1.47.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1520311367
+export SOURCE_DATE_EPOCH=1520311529
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1520311367
+export SOURCE_DATE_EPOCH=1520311529
 rm -rf %{buildroot}
 %make_install
 
