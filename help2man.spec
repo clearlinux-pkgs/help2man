@@ -6,10 +6,10 @@
 #
 Name     : help2man
 Version  : 1.47.5
-Release  : 8
-URL      : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz
-Source0  : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz
-Source99 : http://ftp.gnu.org/gnu/help2man/help2man-1.47.5.tar.xz.sig
+Release  : 9
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz
+Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -44,12 +44,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1506143614
+export SOURCE_DATE_EPOCH=1520311367
 %configure --disable-static
-make V=1  %{?_smp_mflags}
+make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1506143614
+export SOURCE_DATE_EPOCH=1520311367
 rm -rf %{buildroot}
 %make_install
 
