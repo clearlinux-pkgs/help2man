@@ -6,7 +6,7 @@
 #
 Name     : help2man
 Version  : 1.47.6
-Release  : 10
+Release  : 11
 URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
 Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
 Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz.sig
