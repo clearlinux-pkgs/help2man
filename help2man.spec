@@ -5,16 +5,17 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.6
-Release  : 11
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz
-Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.6.tar.xz.sig
+Version  : 1.47.7
+Release  : 12
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz
+Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: help2man-bin
-Requires: help2man-doc
+Requires: help2man-license
+Requires: help2man-man
 
 %description
 help2man is a script to create simple man pages from the --help and
@@ -23,6 +24,8 @@ help2man is a script to create simple man pages from the --help and
 %package bin
 Summary: bin components for the help2man package.
 Group: Binaries
+Requires: help2man-license = %{version}-%{release}
+Requires: help2man-man = %{version}-%{release}
 
 %description bin
 bin components for the help2man package.
@@ -31,26 +34,45 @@ bin components for the help2man package.
 %package doc
 Summary: doc components for the help2man package.
 Group: Documentation
+Requires: help2man-man = %{version}-%{release}
 
 %description doc
 doc components for the help2man package.
 
 
+%package license
+Summary: license components for the help2man package.
+Group: Default
+
+%description license
+license components for the help2man package.
+
+
+%package man
+Summary: man components for the help2man package.
+Group: Default
+
+%description man
+man components for the help2man package.
+
+
 %prep
-%setup -q -n help2man-1.47.6
+%setup -q -n help2man-1.47.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1520311529
+export SOURCE_DATE_EPOCH=1537755638
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1520311529
+export SOURCE_DATE_EPOCH=1537755638
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/help2man
+cp COPYING %{buildroot}/usr/share/doc/help2man/COPYING
 %make_install
 
 %files
@@ -61,6 +83,13 @@ rm -rf %{buildroot}
 /usr/bin/help2man
 
 %files doc
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 %doc /usr/share/info/*
-%doc /usr/share/man/man1/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/help2man/COPYING
+
+%files man
+%defattr(-,root,root,-)
+/usr/share/man/man1/help2man.1
