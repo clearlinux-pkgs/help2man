@@ -5,17 +5,17 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.7
-Release  : 12
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz
-Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.7.tar.xz.sig
+Version  : 1.47.8
+Release  : 13
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.8.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.8.tar.xz
+Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.8.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: help2man-bin
-Requires: help2man-license
-Requires: help2man-man
+Requires: help2man-bin = %{version}-%{release}
+Requires: help2man-license = %{version}-%{release}
+Requires: help2man-man = %{version}-%{release}
 
 %description
 help2man is a script to create simple man pages from the --help and
@@ -57,22 +57,22 @@ man components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.47.7
+%setup -q -n help2man-1.47.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537755638
+export SOURCE_DATE_EPOCH=1539444244
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1537755638
+export SOURCE_DATE_EPOCH=1539444244
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/help2man
-cp COPYING %{buildroot}/usr/share/doc/help2man/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/help2man
+cp COPYING %{buildroot}/usr/share/package-licenses/help2man/COPYING
 %make_install
 
 %files
@@ -87,9 +87,9 @@ cp COPYING %{buildroot}/usr/share/doc/help2man/COPYING
 %doc /usr/share/info/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/help2man/COPYING
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/help2man/COPYING
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/help2man.1
