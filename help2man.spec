@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.9
-Release  : 14
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.9.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.9.tar.xz
-Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.9.tar.xz.sig
-Summary  : Conversion tool to create man files
+Version  : 1.47.10
+Release  : 15
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz
+Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz.sig
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: help2man-bin = %{version}-%{release}
@@ -56,20 +56,20 @@ man components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.47.9
+%setup -q -n help2man-1.47.10
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1553008064
+export SOURCE_DATE_EPOCH=1553546509
 export LDFLAGS="${LDFLAGS} -fno-lto"
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1553008064
+export SOURCE_DATE_EPOCH=1553546509
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/help2man
 cp COPYING %{buildroot}/usr/share/package-licenses/help2man/COPYING
