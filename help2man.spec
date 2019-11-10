@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.10
-Release  : 15
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz
-Source99 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.10.tar.xz.sig
+Version  : 1.47.11
+Release  : 16
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.11.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.11.tar.xz
+Source1 : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.11.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -56,24 +56,29 @@ man components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.47.10
+%setup -q -n help2man-1.47.11
+cd %{_builddir}/help2man-1.47.11
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1553546509
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1573417312
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1553546509
+export SOURCE_DATE_EPOCH=1573417312
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/help2man
-cp COPYING %{buildroot}/usr/share/package-licenses/help2man/COPYING
-cp debian/copyright %{buildroot}/usr/share/package-licenses/help2man/debian_copyright
+cp %{_builddir}/help2man-1.47.11/COPYING %{buildroot}/usr/share/package-licenses/help2man/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/help2man-1.47.11/debian/copyright %{buildroot}/usr/share/package-licenses/help2man/119eacdff9a5df0da51a43de46e250c3bb1c00fe
 %make_install
 
 %files
@@ -89,8 +94,8 @@ cp debian/copyright %{buildroot}/usr/share/package-licenses/help2man/debian_copy
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/help2man/COPYING
-/usr/share/package-licenses/help2man/debian_copyright
+/usr/share/package-licenses/help2man/119eacdff9a5df0da51a43de46e250c3bb1c00fe
+/usr/share/package-licenses/help2man/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 
 %files man
 %defattr(0644,root,root,0755)
