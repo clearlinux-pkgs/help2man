@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.47.15
-Release  : 21
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.15.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.15.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.15.tar.xz.sig
+Version  : 1.47.16
+Release  : 22
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.16.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.16.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/help2man/help2man-1.47.16.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -56,15 +56,15 @@ man components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.47.15
-cd %{_builddir}/help2man-1.47.15
+%setup -q -n help2man-1.47.16
+cd %{_builddir}/help2man-1.47.16
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588006619
+export SOURCE_DATE_EPOCH=1594061453
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -74,11 +74,11 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1588006619
+export SOURCE_DATE_EPOCH=1594061453
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/help2man
-cp %{_builddir}/help2man-1.47.15/COPYING %{buildroot}/usr/share/package-licenses/help2man/31a3d460bb3c7d98845187c716a30db81c44b615
-cp %{_builddir}/help2man-1.47.15/debian/copyright %{buildroot}/usr/share/package-licenses/help2man/667fd43bb24255399056650ff1dde33ae5dac3bf
+cp %{_builddir}/help2man-1.47.16/COPYING %{buildroot}/usr/share/package-licenses/help2man/31a3d460bb3c7d98845187c716a30db81c44b615
+cp %{_builddir}/help2man-1.47.16/debian/copyright %{buildroot}/usr/share/package-licenses/help2man/667fd43bb24255399056650ff1dde33ae5dac3bf
 %make_install
 
 %files
