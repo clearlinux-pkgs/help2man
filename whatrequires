@@ -4,7 +4,6 @@ cgdb
 efitools
 flex
 fwupd
-gengetopt
 libmodulemd
 libsmbios
 pango
@@ -14,4 +13,3 @@ source-highlight
 vala
 xfce4-screenshooter
 xmlsec1
-ykclient
