@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF0DC8E00B28C5995 (bod@debian.org)
 #
 Name     : help2man
-Version  : 1.48.4
-Release  : 27
-URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.4.tar.xz
-Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.4.tar.xz
-Source1  : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.4.tar.xz.sig
+Version  : 1.48.5
+Release  : 28
+URL      : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.5.tar.xz
+Source0  : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.5.tar.xz
+Source1  : https://mirrors.kernel.org/gnu/help2man/help2man-1.48.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -56,15 +56,15 @@ man components for the help2man package.
 
 
 %prep
-%setup -q -n help2man-1.48.4
-cd %{_builddir}/help2man-1.48.4
+%setup -q -n help2man-1.48.5
+cd %{_builddir}/help2man-1.48.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628528690
+export SOURCE_DATE_EPOCH=1629735870
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -74,11 +74,11 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1628528690
+export SOURCE_DATE_EPOCH=1629735870
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/help2man
-cp %{_builddir}/help2man-1.48.4/COPYING %{buildroot}/usr/share/package-licenses/help2man/31a3d460bb3c7d98845187c716a30db81c44b615
-cp %{_builddir}/help2man-1.48.4/debian/copyright %{buildroot}/usr/share/package-licenses/help2man/cdeb154dc27f7531b23ecb4d011af5543e4a8cf8
+cp %{_builddir}/help2man-1.48.5/COPYING %{buildroot}/usr/share/package-licenses/help2man/31a3d460bb3c7d98845187c716a30db81c44b615
+cp %{_builddir}/help2man-1.48.5/debian/copyright %{buildroot}/usr/share/package-licenses/help2man/cdeb154dc27f7531b23ecb4d011af5543e4a8cf8
 %make_install
 
 %files
