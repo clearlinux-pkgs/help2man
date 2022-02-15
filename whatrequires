@@ -1,6 +1,7 @@
 # This file contains recursive sources that require this package
 Pacemaker
 cgdb
+debugedit
 efitools
 flex
 fwupd
