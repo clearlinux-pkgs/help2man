@@ -1,12 +1,15 @@
 # This file contains recursive sources that require this package
 Pacemaker
+binutils
 cgdb
 debugedit
 efitools
 flex
 fwupd
+gengetopt
 libmodulemd
 libsmbios
+openpace
 pango
 psensor
 sbsigntools
